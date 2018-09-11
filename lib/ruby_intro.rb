@@ -4,12 +4,10 @@
 
 
 def sum arr
-  # YOUR CODE HERE
   return arr.inject(0, :+)
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
   if arr.length==0
     return 0
   elsif arr.length==1
@@ -20,7 +18,6 @@ def max_2_sum arr
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
   if arr.length==0 || arr.length ==1
     return FALSE
   else
@@ -29,21 +26,38 @@ def sum_to_n? arr, n
 end
 
 # Part 2
-
 def hello(name)
-  # YOUR CODE HERE
+   "Hello, #{name}"
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  
+  /^[bcdfghjklmnpqrstvwxyz]/i.match(s)
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  if s =~ (/^[01]+$/) && (s.to_i%4==0)
+    return true
+  else
+    return false
+  end
 end
 
 # Part 3
 
 class BookInStock
 # YOUR CODE HERE
+  attr_accessor :isbn, :price
+  def initialize(isbn, price)
+    raise ArgumentError if isbn.empty? || price<=0
+    @isbn = isbn
+    @price = price
+  end
+  
+  def price_as_string
+    "$%.2f" % @price
+    
+  end
+  
+  
 end
