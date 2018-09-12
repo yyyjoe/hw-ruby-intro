@@ -19,7 +19,7 @@ end
 
 def sum_to_n? arr, n
   if arr.length==0 || arr.length ==1
-    return FALSE
+    return false
   else
     return arr.combination(2).any?{|a,b| a+b==n}
   end
@@ -31,7 +31,6 @@ def hello(name)
 end
 
 def starts_with_consonant? s
-  
   /^[bcdfghjklmnpqrstvwxyz]/i.match(s)
 end
 
